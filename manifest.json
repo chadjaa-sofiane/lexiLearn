@@ -1,0 +1,8 @@
+{
+    "manifest_version": 3,
+    "name": "LexiLearn",
+    "version": "0.1.0",
+    "icons":{
+        "32": "/assets/LexiLearn.png" 
+    }
+}
