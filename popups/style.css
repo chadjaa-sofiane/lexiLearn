@@ -1,7 +1,7 @@
 :root {
   /* the colors */
-  --color-main: #4b0082;
-  --color-text: white;
+  --color-main: #050505;
+  --color-text: #e3e3e3;
 
   /* the fonts */
   --font-sm: 1rem;
@@ -72,15 +72,55 @@ button {
 .result_field {
   width: 100%;
 }
-.wait_progress_field {
+.loader {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.wait_progress_field > div {
+
+
+.circular-loader {
   width: 40px;
   height: 40px;
-  border: 3px solid var(--color-text);
-  border-radius: 50%;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
 }
+
+
+.loader-path {
+  stroke-dasharray: 150, 200;
+  stroke-dashoffset: -10;
+  -webkit-animation: dash 1.5s ease-in-out infinite,
+    color 6s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+
+/* 169.66986083984375 */
