@@ -1,8 +1,10 @@
 import { Router } from "express";
 import OpenAI from "openai";
+import { config } from "dotenv";
+config()
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.OPEN_AI_KEY,
 });
 
 const gptRouter = Router();
