@@ -9,10 +9,14 @@
         "default_popup": "popups/index.html"
     },
     "permissions": [
-        "scripting"
+        "scripting",
+        "activeTab"
     ],
     "host_permissions": [
         "http://*/*",
         "https://*/*"
-    ]
+    ],
+    "background": {
+        "service_worker": "./background/background.js"
+    }
 }
