@@ -81,6 +81,7 @@ button {
 
 
 .circular-loader {
+  visibility: hidden;
   width: 40px;
   height: 40px;
   -webkit-animation: rotate 2s linear infinite;

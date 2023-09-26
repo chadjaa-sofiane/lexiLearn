@@ -1,15 +1,25 @@
 const inputForm = document.getElementById("input_form");
+const loadingSvg = document.getElementById("loading_svg");
 
-const wait = async (time = 2000) =>
-  new Promise((resolve) => {
-    setTimeout(resolve, time);
-  });
-
-inputForm.addEventListener("submit", async (e) => {
+inputForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
   const formProps = Object.fromEntries(formData);
-  console.log("wait...");
-  await wait(4000);
-  console.log(formProps["text_input"]);
+  loadingSvg.style.visibility = "visible";
+
+  chrome.runtime.sendMessage(
+    {
+      type: "fetch",
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      url: "http://localhost:3000/gpt",
+      body: JSON.stringify({
+        word: formProps.text_input,
+      }),
+    },
+    (result) => {
+      console.log(result);
+      loadingSvg.style.visibility = "hidden";
+    }
+  );
 });
