@@ -1,23 +1,23 @@
 {
-    "manifest_version": 3,
-    "name": "LexiLearn",
-    "version": "0.1.0",
-    "icons":{
-        "32": "/assets/LexiLearn.png" 
-    },
-    "action": {
-        "default_popup": "popups/index.html"
-    },
-    "permissions": [
-        "scripting",
-        "activeTab",
-        "nativeMessaging"
-    ],
-    "host_permissions": [
-        "http://*/*",
-        "https://*/*"
-    ],
-    "background": {
-        "service_worker": "./background/background.js"
+  "manifest_version": 3,
+  "name": "LexiLearn",
+  "version": "0.1.0",
+  "icons": {
+    "32": "/assets/LexiLearn.png"
+  },
+  "action": {
+    "default_popup": "popups/index.html"
+  },
+  "permissions": ["scripting", "activeTab", "nativeMessaging"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "./background/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["scripts/main.js", "components/word_info.js"],
+      "matches": ["<all_urls>"]
     }
+  ]
 }
+
