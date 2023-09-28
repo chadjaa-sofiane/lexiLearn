@@ -1,0 +1,39 @@
+.word_info_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+.correct_word {
+    display: block;
+}
+.word_info_field {
+  font-size: var(--font-md);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+.word_info_field h2 {
+  margin: 0;
+  padding: 0;
+}
+.word_info_field p {
+  font-size: var(--font-sm);
+}
+.word_info_field ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+.highlighted {
+    padding: 0.5em;
+    background-color: rgba(143, 146, 158, 0.2);
+    border-radius: 0.2em;
+}
+
+.correct_word {
+  font-weight: bold;
+}
