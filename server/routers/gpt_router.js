@@ -26,7 +26,7 @@ gptRouter.post("/gpt", async (req, res) => {
                     Define ${word}, including a comprehensive definition and examples. Provide at least 50 words for the definition. Return the result in JSON format with fields:
                     definition: string
                     , examples: string[]
-                    , correct-word: string
+                    , correct_word: string
                     , synonyms: string[]
                     , usage: string (when to use this word and how formal it is and what you suggest to use instead for different occasions)
                     , more: string (anything else you want to say as GPT)
