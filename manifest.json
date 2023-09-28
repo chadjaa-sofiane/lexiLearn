@@ -15,9 +15,11 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["scripts/main.js", "components/word_info.js"],
+      "resources": [
+        "scripts/main.js",
+        "components/word_info.js"
+      ],
       "matches": ["<all_urls>"]
     }
   ]
 }
-
