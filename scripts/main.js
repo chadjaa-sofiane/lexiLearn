@@ -22,7 +22,7 @@ inputForm.addEventListener("submit", (e) => {
     (result) => {
       resultContainer.innerHTML = "";
       loadingSvg.style.display = "none";
-      resultContainer.innerHTML = createWordInfo(result.data.data);
+      resultContainer.innerHTML = createWordInfo(result.data.data, formProps.text_input);
     }
   );
 });

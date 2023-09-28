@@ -19,16 +19,14 @@
 // }
 // customElements.define("word-info", WordInfo);
 
-export const createWordInfo = ({
-  definition,
-  examples,
-  correct_word,
-  synonyms,
-  usage,
-}) => {
-  const correctWord = correct_word
-    ? `<div class="word_info_field">you mean: <i class="correct_word"> ${correct_word}* </i></div>`
-    : "";
+export const createWordInfo = (
+  { definition, examples, correct_word, synonyms, usage },
+  text_input
+) => {
+  const correctWord =
+    correct_word !== text_input
+      ? `<p class="correct_word_field">you mean: <span class="correct_word"> ${correct_word} </span></p>`
+      : "";
 
   const examplesList = examples
     .map((example) => `<li class="highlighted">${example}</li>`)
