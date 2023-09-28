@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   /* the colors */
   --color-main: #050505;
@@ -12,6 +18,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: var(--color-main);
   color: var(--color-text);
 }
 
@@ -30,11 +37,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: var(--color-main);
   padding: 2em;
   row-gap: 2em;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
 .logo {
   width: 40px;
   height: 40px;
@@ -79,18 +87,16 @@ button {
   align-items: center;
 }
 
-
 .circular-loader {
-  visibility: hidden;
+  display: none;
   width: 40px;
   height: 40px;
   -webkit-animation: rotate 2s linear infinite;
-          animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
   -webkit-transform-origin: center center;
-      -ms-transform-origin: center center;
-          transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
 }
-
 
 .loader-path {
   stroke-dasharray: 150, 200;
@@ -100,7 +106,6 @@ button {
   animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
   stroke-linecap: round;
 }
-
 
 @keyframes rotate {
   100% {

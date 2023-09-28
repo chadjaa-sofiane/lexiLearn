@@ -1,11 +1,13 @@
+import { createWordInfo } from "../components/word_info.js";
 const inputForm = document.getElementById("input_form");
 const loadingSvg = document.getElementById("loading_svg");
+const resultContainer = document.getElementById("result_container");
 
 inputForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
   const formProps = Object.fromEntries(formData);
-  loadingSvg.style.visibility = "visible";
+  loadingSvg.style.display = "block";
 
   chrome.runtime.sendMessage(
     {
@@ -18,8 +20,9 @@ inputForm.addEventListener("submit", (e) => {
       }),
     },
     (result) => {
-      console.log(result);
-      loadingSvg.style.visibility = "hidden";
+      resultContainer.innerHTML = "";
+      loadingSvg.style.display = "none";
+      resultContainer.innerHTML = createWordInfo(result.data.data);
     }
   );
 });
