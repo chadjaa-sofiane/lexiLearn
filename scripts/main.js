@@ -14,7 +14,7 @@ inputForm.addEventListener("submit", (e) => {
       type: "fetch",
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      url: "http://localhost:3000/gpt",
+      url: "http://localhost:3000/gpt/word",
       body: JSON.stringify({
         word: formProps.text_input,
       }),
