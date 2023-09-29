@@ -1,31 +1,10 @@
-// const linkElement = document.createElement("link");
-// linkElement.rel = "stylesheet";
-// linkElement.href = "/components/word_info.css";
-
-// const template = document.createElement("template");
-// template.innerHTML = `
-//   <div class="div">
-//     <h1> my name is chadjaa sofiane </h1>
-//   </div>
-// `;
-
-// class WordInfo extends HTMLElement {
-//   constructor() {
-//     super();
-//     const shadow = this.attachShadow({ mode: "open" });
-//     shadow.append(linkElement);
-//     shadow.append(template.content.cloneNode(true));
-//   }
-// }
-// customElements.define("word-info", WordInfo);
-
 export const createWordInfo = (
   { definition, examples, correct_word, synonyms, usage },
   text_input
 ) => {
   const correctWord =
     correct_word !== text_input
-      ? `<p class="correct_word_field">you mean: <span class="correct_word"> ${correct_word} </span></p>`
+      ? `<p class="correct_text_field">you mean: <span class="correct_word"> ${correct_word} </span></p>`
       : "";
 
   const examplesList = examples
@@ -37,19 +16,19 @@ export const createWordInfo = (
 
   return `
   ${correctWord}
-  <div class="word_info_field">
+  <div class="text_info_field">
     <h2> definition </h2>
     <p class="highlighted">${definition}</p>
   </div>
-  <div class="word_info_field">
+  <div class="text_info_field">
     <h2> examples </h2>
     <ul>${examplesList}</ul>
   </div>
-  <div class="word_info_field">
+  <div class="text_info_field">
     <h2> synonyms </h2>
     <ul>${synonymsList}</ul>
   </div>
-  <div class="word_info_field">
+  <div class="text_info_field">
     <h2> usage </h2>
     <p class="highlighted">${usage}</p>
   </div>

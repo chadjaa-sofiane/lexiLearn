@@ -1,32 +1,32 @@
-.word_info_container {
+.text_info_container {
   width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 1em;
 }
-.correct_word {
+.correct_text {
     display: block;
 }
-.word_info_field {
+.text_info_field {
   font-size: var(--font-md);
   display: flex;
   flex-direction: column;
   row-gap: 1em;
 }
-.correct_word_field{
+.correct_text_field{
   font-size: var(--font-lg);
   display: flex;
   column-gap: 1em;
 }
 
-.word_info_field h2 {
+.text_info_field h2 {
   margin: 0;
   padding: 0;
 }
-.word_info_field p {
+.text_info_field p {
   font-size: var(--font-sm);
 }
-.word_info_field ul {
+.text_info_field ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -40,6 +40,6 @@
     border-radius: 0.2em;
 }
 
-.correct_word {
+.correct_text {
   font-weight: bold;
 }
