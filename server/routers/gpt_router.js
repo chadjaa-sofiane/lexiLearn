@@ -39,6 +39,13 @@ gptRouter.post("/gpt", async (req, res) => {
                  , suggestions: string (better ways to express the sentence)
                  , more: string (additional insights or context you can provide)
                `,
+      question: `
+                Suggest the most appropriate word for the context: ${text}. Provide the word and a brief explanation of why it's suitable. Include its formality and other word suggestions with their formalities. Return the result in JSON format with fields:
+                word: string
+                , explanation: string
+                , formality: string
+                , other_suggestions: [{ word: string, formality: string }]
+  `,
     };
     const gptPrompt = prompts[type];
     if (!gptPrompt) {
