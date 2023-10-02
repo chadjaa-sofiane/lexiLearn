@@ -1,9 +1,8 @@
-export const createSentenceInfo = ({
-  meaning,
-  formality,
-  suggestions,
-  more,
-}) => {
+export const createSentenceInfo = (
+  { meaning, formality, suggestions, more },
+  _
+) => {
+  console.log("it is really working");
   return `
     <div class="text_info_field">
       <h2> meaning </h2>
