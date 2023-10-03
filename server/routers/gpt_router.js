@@ -29,7 +29,7 @@ gptRouter.post("/gpt", async (req, res) => {
                 , correct_word: string
                 , synonyms: string[]
                 , usage: string (when to use this word and how formal it is and what you suggest to use instead for different occasions)
-                , more: string (anything else you want to say as GPT)
+                , more: string (additional insights or context you can provide)
               `,
       sentence: `
                  Interpret the following sentence: ${text}. Provide a comprehensive explanation of its meaning under the meaning field. Ensure the explanation includes at least 50 words. Return the result in JSON format with the following fields:
@@ -45,6 +45,7 @@ gptRouter.post("/gpt", async (req, res) => {
                 , explanation: string
                 , formality: string
                 , other_suggestions: [{ word: string, formality: string }]
+                , more: string (additional insights or context you can provide)
   `,
     };
     const gptPrompt = prompts[type];
