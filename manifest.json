@@ -15,14 +15,15 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["scripts/main.js", "components/word_info.js"],
-      "matches": ["<all_urls>"]
+      "resources": ["scripts/content.js", "components/*", "scripts/api/*"],
+      "matches": ["<all_urls>"],
+      "use_dynamic_url": true
     }
   ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["scripts/content.js"],
+      "js": ["scripts/load_content.js"],
       "run_at": "document_end"
     }
   ]
