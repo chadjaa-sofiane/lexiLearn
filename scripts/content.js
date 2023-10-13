@@ -1,4 +1,14 @@
+const resultContainer = document.createElement("div");
+resultContainer.style.position = "fixed";
+resultContainer.style.backgroundColor = "blue";
+resultContainer.style.width = "40px";
+resultContainer.style.height = "40px";
+console.log(getGPTResult);
+
 let selected = false;
+let text = "";
+let x;
+let y;
 
 const element = document.createElement("div");
 element.style.backgroundColor = "red";
@@ -8,19 +18,30 @@ element.style.height = "20px";
 element.style.cursor = "pointer";
 
 document.addEventListener("mouseup", (e) => {
-  if (document.body.contains(element)) document.body.removeChild(element);
-  element.style.top = `${e.clientY}px`;
-  element.style.left = `${e.clientX}px`;
+  x = e.clientX;
+  y = e.clientY;
+  element.style.top = `${y}px`;
+  element.style.left = `${x}px`;
   if (selected) {
     document.body.appendChild(element);
   }
 });
 document.addEventListener("mousedown", () => {
   if (document.body.contains(element)) document.body.removeChild(element);
+  if (document.body.contains(resultContainer))
+    document.body.removeChild(resultContainer);
 });
 
 document.addEventListener("selectionchange", (e) => {
   const selection = window.getSelection();
-  const text = selection.toString();
+  text = selection.toString();
   selected = !selection.isCollapsed;
+});
+
+element.addEventListener("mousedown", (e) => {
+  e.stopPropagation();
+  resultContainer.style.top = `${y}px`;
+  resultContainer.style.left = `${x}px`;
+  document.body.appendChild(resultContainer);
+  getGPTResult(resultContainer, text);
 });
