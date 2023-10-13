@@ -15,7 +15,12 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["scripts/content.js", "components/*", "scripts/api/*"],
+      "resources": [
+        "scripts/content.js",
+        "components/*",
+        "scripts/api/*",
+        "help/*"
+      ],
       "matches": ["<all_urls>"],
       "use_dynamic_url": true
     }
@@ -23,7 +28,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["scripts/load_content.js"],
+      "js": ["scripts/content.js", "scripts/api/getGPTResult.js"],
       "run_at": "document_end"
     }
   ]
