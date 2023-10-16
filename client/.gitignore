@@ -174,3 +174,6 @@ dist
 # Finder (MacOS) folder config
 .DS_Store
 
+# the build files
+/build/scripts
+/build/background
