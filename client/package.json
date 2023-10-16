@@ -1,0 +1,13 @@
+{
+  "name": "client",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^1.0.6",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "start": "bun bun.bundler.ts"
+  },
+  "peerDependencies": {}
+}
