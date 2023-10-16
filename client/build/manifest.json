@@ -11,24 +11,13 @@
   "permissions": ["scripting", "activeTab", "nativeMessaging"],
   "host_permissions": ["http://*/*", "https://*/*"],
   "background": {
-    "service_worker": "./background/background.js"
+    "service_worker": "background/background.js"
   },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "scripts/content.js",
-        "components/*",
-        "scripts/api/*",
-        "help/*"
-      ],
-      "matches": ["<all_urls>"],
-      "use_dynamic_url": true
-    }
-  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["scripts/content.js", "scripts/api/getGPTResult.js"],
+      "js": ["scripts/content.js"],
+      "css": ["style/text_info.css"],
       "run_at": "document_end"
     }
   ]
