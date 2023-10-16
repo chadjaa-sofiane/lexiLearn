@@ -1,3 +1,11 @@
+.view_container {
+  background-color: #050505;
+  color: #e3e3e3;
+  width: 30em;
+  min-height: 30em;
+  padding: 2em;
+}
+
 .text_info_container {
   width: 100%;
   display: flex;
