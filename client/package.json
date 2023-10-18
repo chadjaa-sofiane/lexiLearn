@@ -7,7 +7,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "start": "bun bun.bundler.ts"
+    "start": "bun --hot bun.bundler.ts"
   },
   "peerDependencies": {}
 }
