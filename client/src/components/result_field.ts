@@ -1,11 +1,5 @@
 export const createResultField = () => {
   // adding the css style
-  const link = document.createElement("link");
-  const head = document.querySelector("head");
-  link.href = "/components/text_info.css";
-  link.rel = "stylesheet";
-  head.append(link);
-
   const resultField = document.createElement("div");
   resultField.classList.add("result_field");
 

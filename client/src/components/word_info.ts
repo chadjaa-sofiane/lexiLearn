@@ -1,6 +1,15 @@
+type WordInfo = {
+  definition: string;
+  exmples: string[];
+  examples: string[];
+  correct_word: string;
+  synonyms: string[];
+  usage: string;
+};
+
 export const createWordInfo = (
-  { definition, examples, correct_word, synonyms, usage },
-  text_input
+  { definition, examples, correct_word, synonyms, usage }: WordInfo,
+  text_input: string
 ) => {
   const correctWord =
     correct_word !== text_input

@@ -1,6 +1,14 @@
+type QuestionInfo = {
+  word: string;
+  explanation: string;
+  formality: string;
+  other_suggestions: { word: string; formality: string }[];
+  more: string;
+};
+
 export const createQuestionInfo = (
-  { word, explanation, formality, other_suggestions, more },
-  _
+  { word, explanation, formality, other_suggestions, more }: QuestionInfo,
+  _: string
 ) => {
   const suggestionsList = other_suggestions
     .map(

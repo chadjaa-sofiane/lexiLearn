@@ -4,7 +4,7 @@ import { createQuestionInfo } from "../../components/question_info.js";
 import { createResultField } from "../../components/result_field.js";
 import getOptimalChoise from "../../help/getOptimalChoise.js";
 
-const promptHandlers = {
+const promptHandlers: Record<string, any> = {
   word: {
     type: "word",
     render: createWordInfo,
@@ -19,14 +19,14 @@ const promptHandlers = {
   },
 };
 
-export const getGPTResult = (container, textInupt) => {
+export const getGPTResult = (container: any, textInupt: string) => {
   const [resultField, loadingSvg] = createResultField();
   container.appendChild(resultField);
 
   loadingSvg.style.display = "block";
 
   const type = getOptimalChoise(
-    textInupt,
+    textInupt.trim(),
     [
       {
         conditions: (text) => text.split(" ").length === 1,

@@ -1,0 +1,16 @@
+{
+  "name": "dict_extention",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/chrome": "^0.0.246",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "workspaces": [
+    "client/*",
+    "server/*"
+  ]
+}

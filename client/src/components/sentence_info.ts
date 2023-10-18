@@ -1,6 +1,13 @@
+type SentenceInfo = {
+  meaning: string;
+  formality: string;
+  suggestions: string;
+  more: string;
+};
+
 export const createSentenceInfo = (
-  { meaning, formality, suggestions, more },
-  _
+  { meaning, formality, suggestions, more }: SentenceInfo,
+  _: string
 ) => {
   console.log("it is really working");
   return `
