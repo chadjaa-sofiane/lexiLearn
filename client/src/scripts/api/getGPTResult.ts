@@ -26,7 +26,7 @@ export const getGPTResult = (container: any, textInupt: string) => {
   loadingSvg.style.display = "block";
 
   const type = getOptimalChoise(
-    textInupt,
+    textInupt.trim(),
     [
       {
         conditions: (text) => text.split(" ").length === 1,
