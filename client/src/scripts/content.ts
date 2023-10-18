@@ -18,11 +18,13 @@ let x: number;
 let y: number;
 
 const element = document.createElement("div");
-element.style.backgroundColor = "red";
-element.style.position = "fixed";
-element.style.width = "20px";
-element.style.height = "20px";
-element.style.cursor = "pointer";
+element.classList.add("floating_logo");
+
+const img = document.createElement("img");
+img.src = chrome.runtime.getURL("../assets/LexiLearn.svg");
+img.style.objectFit = "container";
+
+element.appendChild(img);
 
 document.addEventListener("mouseup", (e) => {
   x = e.clientX;
@@ -34,6 +36,7 @@ document.addEventListener("mouseup", (e) => {
   }
 });
 document.addEventListener("mousedown", () => {
+  open = false;
   if (document.body.contains(element)) document.body.removeChild(element);
   if (document.body.contains(viewContainer))
     document.body.removeChild(viewContainer);
@@ -67,11 +70,11 @@ viewContainer.addEventListener("mousedown", (e) => {
   initialX = e.clientX - viewContainer.getBoundingClientRect().left;
   initialY = e.clientY - viewContainer.getBoundingClientRect().top;
   viewContainer.style.cursor = "grabbing";
-  viewContainer.style.border = "2px solid blue"
+  viewContainer.style.border = "2px solid blue";
 });
 
 viewContainer.addEventListener("mouseup", () => {
-  viewContainer.style.border = "none"
+  viewContainer.style.border = "none";
   isDragging = false;
 });
 
